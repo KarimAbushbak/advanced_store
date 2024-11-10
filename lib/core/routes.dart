@@ -1,3 +1,5 @@
+import 'package:advanced_store/config/dependancy_injection.dart';
+import 'package:advanced_store/features/out_boarding/out_boarding_view.dart';
 import 'package:advanced_store/features/splash/presntaion/view/splash_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -7,7 +9,7 @@ class Routes {
   static const String splashView = '/splash_view';
   static const String languagePage = '/language_page';
   static const String homeView = '/homeView';
-  static const String outBoarding = '/outBoarding';
+  static const String outBoardingView = '/outBoardingView';
   static const String loginView = '/loginView';
   static const String registerView = '/registerView';
   static const String profileView = '/profileView';
@@ -19,11 +21,10 @@ class RouteGenerator {
   static Route<dynamic> getRoute(RouteSettings settings) {
     switch (settings.name) {
       case Routes.splashView:
+        initSplash();
         return MaterialPageRoute(builder: (_) => const SplashView());
-      // case Routes.languagePage:
-      //   return MaterialPageRoute(builder: (_) => const LanguagePage());
-      // case Routes.outBoarding:
-      //   return MaterialPageRoute(builder: (_) => const OutBoarding());
+      case Routes.outBoardingView:
+        return MaterialPageRoute(builder: (_) => const OutBoardingView());
       // case Routes.loginView:
       //   return MaterialPageRoute(builder: (_) =>  LoginView());
       // case Routes.registerView:
